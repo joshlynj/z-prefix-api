@@ -34,7 +34,7 @@ const saltRounds = 12;
 const { createUser, getPasswordHash } = require("./controllers");
 app.use(morgan("tiny"));
  
-//console.log('node environment', process.env.NODE_ENV)
+//console.log('node environment per heroku', process.env.NODE_ENV)
 
 // get all for any table g2g
 app.get('/:table', function(req, res) {
