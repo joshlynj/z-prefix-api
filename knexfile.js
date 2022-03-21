@@ -10,7 +10,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: connectionString
+    connection: process.env.CONNECTION_STRING
    
   },
 

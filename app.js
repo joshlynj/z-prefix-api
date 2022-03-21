@@ -114,21 +114,18 @@ app.post('/posts', function(req, res) {
 
 //password hashing code below
 app.post("/users", function(req, res) {
-    let {username, password, first_name, last_name, email, address, phone_number} = req.body;
+    let {username, password, first_name, last_name} = req.body;
     
     if(!username) res.status(401).send('username required for signup')
     if(!password) res.status(401).send('password required for signup')
     if(!first_name) res.status(401).send('first name required for signup')
     if(!last_name) res.status(401).send('last name required for signup')
-    if(!email) res.status(401).send('email required for signup')
-    if(!address) res.status(401).send('address required for signup')
-    if(!phone_number) res.status(401).send('phone number required for signup')
-    
+   
       else {
         hash(password, saltRounds).then(hashedPassword=>{
         console.log(`users real password:`, password);
         console.log(`That password is now:`, hashedPassword)
-          createUser(username, hashedPassword, first_name, last_name, email, address, phone_number)
+          createUser(username, hashedPassword, first_name, last_name)
           .then(data=> res.status(201).json("USER CREATED SUCCESFULLY"))
           .catch(err => rescape.status(500).json(err));
           });
