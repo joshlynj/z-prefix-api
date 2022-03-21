@@ -12,11 +12,7 @@ module.exports = {
    
   },
 
-  production: {
-    client: 'pg',
-    connection: process.env.CONNECTION_STRING
-   
-  },
+
 
   //created test environment for unit testing
   test: {
@@ -42,6 +38,11 @@ module.exports = {
     }
   },
 
+  production: {
+    client: 'pg',
+    connection: {CONNECTION_STRING, ssl: {rejectUnauthorized: false}}, 
+   
+  }
   // production: {
   //   client: 'postgresql',
   //   connection: {
