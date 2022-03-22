@@ -11,6 +11,9 @@ exports.seed = async function(knex) {
     },
     {user_id: 2, title: 'Worst Place to Visit', 
     content: 'Iowa'
+    },
+    {user_id: 2, title: 'Best Place to Eat', 
+    content: 'Chilis'
     }
   ]);
 };
