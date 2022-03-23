@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
-import cookie from "react-cookie";
+
 
 let name = '';
 
