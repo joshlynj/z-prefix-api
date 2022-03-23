@@ -144,7 +144,7 @@ app.patch('/posts/:id', function(req, res) {
 app.post('/posts', function(req, res) {
     console.log('New post created');
     dbConnection
-  .insert({ user_id: req.body.user_id, title: req.body.title_id, content: req.body.content}).from('posts')
+  .insert({ user_id: req.body.user_id, title: req.body.title, content: req.body.content}).from('posts')
       .then((data) => res.status(201).json(data))
       .catch((err) => {
         console.error(`error here:`, err);
