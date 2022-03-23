@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
   //Hashing
 const { hash, compare } = require("bcrypt");
 const saltRounds = 12;
-const { createUser, getPasswordHash, getIdForUser } = require("./controllers");
+const { createUser, getPasswordHash, getIdForUser, getPostForUser } = require("./controllers");
 app.use(morgan("tiny"));
  
 //console.log('node environment per heroku', process.env.NODE_ENV)
@@ -70,6 +70,24 @@ app.get('/:table/:id', function(req, res) {
         })
       );
   });
+
+
+  app.get('/posts/users/:user_id', function(req, res) {
+    dbConnection
+      // .select('*')
+      // .from(posts)
+      // .where({user_id: req.params.user_id})
+
+      getPostForUser(req.params.user_id)
+      .then(data => res.status(200).json(data))
+      .catch(err =>
+        res.status(404).json({
+          message:
+            'The data you are looking for could not be found. Please try again'
+        })
+      );
+  });
+
 
   // app.get('/:table/:user_id', function(req, res) {
   //   dbConnection

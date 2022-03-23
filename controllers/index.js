@@ -14,9 +14,15 @@ function getIdForUser(username){
     .then(data=>data[0].id)
     )}
 
-    
+function getPostForUser(user_id){
+        console.log('user_id', user_id)
+        return (knex('posts').where({user_id}).select()
+        // .then(data=>data[0].user_id)
+        )}
+
+        
 module.exports = {
-    createUser, getPasswordHash, getIdForUser
+    createUser, getPasswordHash, getIdForUser, getPostForUser
 }
 
 
