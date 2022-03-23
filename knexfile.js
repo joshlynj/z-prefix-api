@@ -14,8 +14,6 @@ module.exports = {
    
   },
 
-
-
   //created test environment for unit testing
   test: {
     client: 'pg',
