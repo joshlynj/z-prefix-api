@@ -89,21 +89,6 @@ app.get('/:table/:id', function(req, res) {
   });
 
 
-  // app.get('/:table/:user_id', function(req, res) {
-  //   dbConnection
-  //     .select('*')
-  //     .from(req.params.table)
-  //     .where({user_id: req.params.user_id})
-  //     .then(data => res.status(200).json(data))
-  //     .catch(err =>
-  //       res.status(404).json({
-  //         message:
-  //           'USERIDThe data you are looking for could not be found. Please try again'
-  //       })
-  //     );
-  //     console.log(data);
-  // });
-
 
   // delete by id 
 app.delete('/:table/:id', function(req, res) {
@@ -116,11 +101,11 @@ app.delete('/:table/:id', function(req, res) {
     })
   });
 
-  // patch services g2g
+  // patch posts 
 app.patch('/posts/:id', function(req, res) {
     const {service, cost} = req.body;
     dbConnection
-  ('posts').where({ id: req.params.id}).update({service: service, cost: cost})
+  ('posts').where({ id: req.params.id}).update({title: req.body.title, content: req.body.content})
     .then((data) => res.status(200).json(data))
       .catch((err) => {
         console.error(err);
