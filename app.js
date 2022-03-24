@@ -113,16 +113,6 @@ app.patch('/posts/:id', function(req, res) {
     })
   });
   
-//   // post to posts
-// app.post('/users', function(req, res) {
-//     dbConnection
-//   .insert({ first_name: req.body.service, cost: req.body.cost}).from('posts')
-//       .then((data) => res.status(201).json(data))
-//       .catch((err) => {
-//         console.error(err);
-//         res.status(404).json({ message: "Something is wrong." })
-//     })
-//   });
 
   // post to posts
 //{user_id: 1, service_id: 1, completion_status: false, part: 'Carburetor', make: null, model: null, year: null},
@@ -198,39 +188,6 @@ app.post("/users/login", (req,res)=> {
   });
 
 
-      
-  //     getPasswordHash(username)
-  //       .then((hashedPassword) => {
-  //         console.log(`user's entered password:`, password);
-  //         console.log(`That user's hashed password:`, hashedPassword);
-  
-  //         compare(password, hashedPassword)
-  //           .then((isMatch) => {
-  //             // send whatever back as json object
-  //             // if 202, useNavigate to whatever page you want
-  //             if (isMatch){
-  //               getIdForUser(username)
-  //               .then(res => res.status(201).json(res))
-  //               .catch(err => res.status(500).json(err))
-  //               // res.status(202).json("passwords match")
-  //             // THIS IS THE SUCCESSFUL LOGIN RESPONSE
-       
-  //                 //.then((res) => res.status(201).send("test"));
-  //                 //.catch((err) => res.status(500).json(err));
-  //             } else{
-  //               res.status(401).json(err);
-  //             }
-  //           })
-  //           .catch((err) => {
-  //             res.status(500).json(err);
-  //           });
-  //       })
-  //       .catch((err) => {
-  //         res.status(500).json(err);
-  //       });
-    
-  // });
-  
 
 
   module.exports = app;
